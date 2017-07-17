@@ -1,21 +1,24 @@
 #include <iostream>
 using namespace std;
-//æŒ‡é’ˆæ–¹æ³•å¯¹ 3 ä¸ªå˜é‡æŒ‰ç”±å°åˆ°å¤§é¡ºåºæŽ’åº
-void swap(int *a, int *b){
-    int *p;
-    p = a;
-    a = b;
-    b = p;
-}
+//Ö¸Õë·½·¨¶Ô 3 ¸ö±äÁ¿°´ÓÉÐ¡µ½´óË³ÐòÅÅÐò
 int main(){
-    int a, b ,c;
-    cin>>a>>b>>c;
-    cout<<"before: a="<<a<<" b="<<b<<" c="<<c<<endl;
-    if(a>b)
-         swap(&a, &b);
-    if(b>c)
-         swap(&b, &c);
-    if(a>b)
-         swap(&a, &b);
-    cout<<"after : a="<<a<<" b="<<b<<" c="<<c<<endl;
+    int *a, *b ,*c, *p;
+    cin>>*a>>*b>>*c;
+    cout<<"before: a="<<*a<<" b="<<*b<<" c="<<*c<<endl;
+    if(*a>*b){
+        p = a;
+        a = b;
+        b = p;
+    }
+    if(*b>*c){
+        p = b;
+        b = c;
+        c = p;
+    }
+    if(*a>*b){
+        p = a;
+        a = b;
+        b = p;
+    }
+    cout<<"after : a="<<*a<<" b="<<*b<<" c="<<*c<<endl;
 }
